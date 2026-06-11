@@ -1,237 +1,334 @@
-# Rapaoarte-Solaris 🌞
+# Rapoarte-Solaris ☀️
 
-**Comprehensive Solar Energy Reports and Market Analysis for Romania**
+**Rapoarte Cuprinzătoare și Analiză Piață pentru Energia Solară în România**
 
-A sophisticated framework for generating detailed reports on solar panel companies and the renewable energy market in Romania.
+O platformă sofisticată pentru generarea rapoartelor detaliate despre companiile de panouri solare și piața energiei regenerabile din România.
 
-## 📋 Project Overview
+## 📋 Prezentare Generală
 
-This project provides an advanced skeleton and toolkit for:
-- Analyzing solar panel companies operating in Romania
-- Tracking renewable energy market trends
-- Generating professional solar energy market reports
-- Monitoring energy production and consumption patterns
-- Evaluating green energy policies and incentives
+Acest proiect oferă un cadru avansat și un set complet de instrumente pentru:
+- Analiza companiilor de panouri solare care operează în România
+- Urmărirea tendințelor pieții energiei regenerabile
+- Generarea rapoartelor profesionale despre piața energiei solare
+- Monitorizarea modelelor de producție și consum de energie
+- Evaluarea politicilor și incentivelor de energie verde
 
-## 📁 Repository Structure
+## 📁 Structura Repository-ului
 
 ```
-Rapaoarte-Solaris/
-├── README.md                          # Project documentation
-├── SETUP.txt                          # Setup instructions
-├── reports/                           # Generated and template reports
-│   ├── template_raport.md            # Standard report template
-│   ├── 2024/                         # Annual reports by year
-│   └── samples/                      # Sample reports
-├── data/                             # Data sources and datasets
-│   ├── companies/                    # Solar company information
-│   ├── market_data/                  # Market statistics
-│   └── energy_data/                  # Energy production data
-├── analysis/                         # Analysis scripts and notebooks
-│   ├── company_analysis.py           # Company performance analysis
-│   ├── market_trends.py              # Market trend analysis
-│   └── notebooks/                    # Jupyter notebooks
-├── templates/                        # Report templates
-│   ├── html/                         # HTML templates
-│   └── pdf/                          # PDF templates
-├── config/                           # Configuration files
-│   ├── settings.json                 # Project settings
-│   └── companies_list.json           # Master company database
-└── docs/                             # Documentation
-    ├── methodology.md                # Analysis methodology
-    ├── data_sources.md               # Data source documentation
-    └── CONTRIBUTING.md               # Contribution guidelines
+Rapoarte-Solaris/
+├── README.md                          # Documentația proiectului
+├── CONFIGURARE.md                     # Instrucțiuni de configurare
+├── CONTRIBUIRE.md                     # Ghid de contribuire
+│
+├── rapoarte/                          # Rapoarte generate și șabloane
+│   ├── sabloane/
+│   │   ├── sablon_lunar.md           # Șablon raport lunar
+│   │   ├── sablon_trimestrial.md     # Șablon raport trimestrial
+│   │   └── sablon_anual.md           # Șablon raport anual
+│   ├── 2024/                         # Rapoarte anuale
+│   ├── 2025/
+│   ├── 2026/
+│   └── eșantioane/                   # Rapoarte exemplu
+│
+├── date/                             # Surse și seturi de date
+│   ├── companii/
+│   │   ├── companii_romania.json     # Baza de date companii
+│   │   ├── profiluri/                # Profiluri companii
+│   │   └── contact.csv               # Informații contact
+│   ├── piata/
+│   │   ├── statistici_2024.csv       # Statistici piață
+│   │   ├── tendinte_pret.json        # Tendințe prețuri
+│   │   └── penetrare_piata.xlsx      # Penetrare piață
+│   └── energie/
+│       ├── productie_solara.csv      # Producție solară
+│       ├── consum_energie.xlsx       # Consum energie
+│       └── eficienta_sisteme.json    # Eficiență sisteme
+│
+├── analiza/                          # Scripturi și notebook-uri
+│   ├── analiza_companii.py           # Analiza performanță companii
+│   ├── tendinte_piata.py             # Analiza tendințe piață
+│   ├── vizualizari.py                # Generare grafice
+│   └── notebookuri/
+│       ├── introducere.ipynb
+│       ├── analiza_piata.ipynb
+│       └── case_study.ipynb
+│
+├── sabloane/                         # Șabloane rapoarte
+│   ├── html/
+│   │   ├── sablon_baza.html          # Șablon HTML principal
+│   │   └── stil.css                  # Stiluri CSS
+│   ├── markdown/
+│   │   ├── headers.md
+│   │   └── componente.md
+│   └── pdf/
+│       └── configurare_pdf.yaml      # Configurare export PDF
+│
+├── configurare/                      # Fișiere de configurare
+│   ├── setari.json                   # Setări proiect
+│   ├── surse_date.yaml               # Configurare surse date
+│   ├── companii_lista.json           # Lista companii monitorizate
+│   └── exemple.env                   # Variabile de mediu
+│
+├── scripturi/                        # Scripturi utility
+│   ├── genereaza_raport.py           # Generator rapoarte
+│   ├── descarca_date.py              # Descărcare date
+│   ├── valideaza_date.py             # Validare date
+│   └── export_pdf.py                 # Export PDF
+│
+├── documente/                        # Documentație detaliată
+│   ├── metodologie.md                # Metodologie analiză
+│   ├── surse_date.md                 # Surse date
+│   ├── ghid_utilizator.md            # Ghid pentru utilizatori
+│   ├── api.md                        # Documentație API
+│   └── faq.md                        # Întrebări frecvente
+│
+├── teste/                            # Teste și validare
+│   ├── test_date.py                  # Test date
+│   ├── test_analiza.py               # Test analiză
+│   └── test_rapoarte.py              # Test rapoarte
+│
+├── resurse/                          # Resurse și referință
+│   ├── imagini/                      # Imagini și logo-uri
+│   ├── fișiere_referință/            # Documente referință
+│   └── links.md                      # Linkuri utile
+│
+├── requirements.txt                  # Dependențe Python
+├── setup.py                          # Configurare proiect
+├── .gitignore                        # Fișiere ignorate Git
+└── LICENTA.md                        # Informații licență
 ```
 
-## 🎯 Key Features
+## ⭐ Caracteristici Principale
 
-### 1. **Company Intelligence**
-- Comprehensive database of Romanian solar panel companies
-- Company profiles with contact information
-- Market position analysis
-- Product and service offerings
+### 1. **Inteligență Companii**
+- Bază de date cuprinzătoare a companiilor de panouri solare din România
+- Profiluri detaliate cu informații de contact
+- Analiza poziției de piață
+- Oferte de produse și servicii
+- Istoricul performanței
 
-### 2. **Market Analysis**
-- Solar energy market size and growth
-- Market penetration analysis
-- Competitive landscape
-- Price trends and analysis
+### 2. **Analiza Pieții**
+- Dimensiunea și creșterea pieții energiei solare
+- Analiza penetrării pieții
+- Peisajul competitiv
+- Tendințe și analize de preț
+- Prognoze de creștere
 
-### 3. **Energy Data**
-- Solar energy production statistics
-- Grid integration data
-- Efficiency metrics
-- Regional distribution analysis
+### 3. **Date Energie**
+- Statistici producție energie solară
+- Date integrare rețea
+- Metrici eficiență
+- Analiza distribuție regională
+- Consumuri și producții comparate
 
-### 4. **Report Generation**
-- Automated report compilation
-- Professional formatting (PDF, HTML, DOCX)
-- Custom report parameters
-- Multi-language support (Romanian, English)
+### 4. **Generare Rapoarte**
+- Compilare automată rapoarte
+- Formare profesională (PDF, HTML, DOCX)
+- Parametri raport personalizabili
+- Suport multilingv (Română, Engleză)
+- Export automată pentru baze de date
 
-### 5. **Visualization**
-- Market charts and graphs
-- Company comparison dashboards
-- Energy production trends
-- Geographic distribution maps
+### 5. **Vizualizări și Grafice**
+- Grafice piață și tendințe
+- Dashboard-uri comparație companii
+- Tendințe producție energie
+- Hărți distribuție geografică
+- Infografice interactive
 
-## 📊 Report Categories
+## 📊 Categorii de Rapoarte
 
-### Monthly Reports
-- Market highlights
-- New company entries
-- Production updates
-- Policy changes
+### Rapoarte Lunare
+- Evidențieri piață
+- Intrări noi companii
+- Actualizări producție
+- Schimbări politice
+- Noi contracte și parteneriate
 
-### Quarterly Reports
-- Market analysis
-- Competitive benchmarking
-- Investment trends
-- Growth forecasts
+### Rapoarte Trimestriale
+- Analiza aprofundată piață
+- Benchmarking competitiv
+- Tendințe investiții
+- Prognoze creștere
+- Analiza SWOT companii
 
-### Annual Reports
-- Comprehensive market overview
-- Year-over-year comparisons
-- Industry trends
-- Future outlook
+### Rapoarte Anuale
+- Prezentare generală piață
+- Comparații an-la-an
+- Tendințe industrie
+- Perspective viitor
+- Recomandări investiții
 
-### Special Reports
-- Company profiles
-- Technology analysis
-- Policy impact assessment
-- Investment opportunities
+### Rapoarte Speciale
+- Profiluri companii detaliate
+- Analiza tehnologie
+- Evaluare impact politici
+- Oportunități investiții
+- Studii de caz
 
-## 🏢 Covered Companies
+## 🏢 Companii Monitorizate
 
-Reports include analysis of major Romanian solar companies including:
-- Large-scale solar operators
-- Equipment and panel manufacturers
-- Installation and maintenance services
-- Energy trading companies
-- Research and development firms
+Rapoartele includ analize ale companiilor majore de energie solară din România:
+- Operatori solari la scală largă
+- Producători echipamente și panouri
+- Servicii instalare și întreținere
+- Companii tranzacționare energie
+- Centre cercetare și dezvoltare
+- Furnizori sisteme stocare
 
-## 📈 Market Segments
+## 📈 Segmente Piață
 
-1. **Residential Solar**
-   - Home installations
-   - Pricing trends
-   - Adoption rates
+### 1. **Energia Solară Rezidențială**
+- Instalații în locuințe private
+- Tendințe prețuri
+- Rate adopție
+- Finanțare disponibilă
 
-2. **Commercial Solar**
-   - Business installations
-   - ROI analysis
-   - Energy savings
+### 2. **Energia Solară Comercială**
+- Instalații în afaceri
+- Analiza ROI
+- Economie energie
+- Contracte corporative
 
-3. **Utility-Scale Solar**
-   - Large solar farms
-   - Grid connections
-   - Production capacity
+### 3. **Energia Solară la Scală Utilă**
+- Ferme solare mari
+- Conexiuni rețea
+- Capacitate producție
+- Acorduri alimentare rețea
 
-4. **Storage Solutions**
-   - Battery systems
-   - Storage capacity
-   - Integration trends
+### 4. **Soluții de Stocare**
+- Sisteme baterii
+- Capacitate stocare
+- Tendințe integrare
+- Costuri și eficiență
 
-## 🔧 Getting Started
+## 🚀 Primii Pași
 
-### Prerequisites
+### Prerequisite
 - Python 3.8+
 - Jupyter Notebook
-- Pandas, NumPy
-- Matplotlib, Plotly
-- pandoc (for PDF generation)
+- Pandas, NumPy, SciPy
+- Matplotlib, Plotly, Seaborn
+- pandoc (pentru generare PDF)
+- Git
 
-### Installation
+### Instalare
 ```bash
-# Clone the repository
+# Clonare repository
 git clone https://github.com/hashkaki1800-gif/Rapaoarte-Solaris.git
 cd Rapaoarte-Solaris
 
-# Install dependencies
+# Creare mediu virtual
+python -m venv venv
+source venv/bin/activate  # Pe Windows: venv\\Scripts\\activate
+
+# Instalare dependențe
 pip install -r requirements.txt
 
-# Configure settings
-cp config/settings.example.json config/settings.json
-# Edit config/settings.json with your preferences
+# Configurare proiect
+cp configurare/exemple.env .env
+# Editați .env cu preferințele voastre
 ```
 
-### Quick Start
+### Pornire Rapidă
 ```bash
-# Generate a sample report
-python generate_report.py --company "CompanyName" --type monthly
+# Generare raport pentru companie
+python scripturi/genereaza_raport.py --companie "NumeCompanie" --tip lunar
 
-# Analyze market trends
-python analysis/market_trends.py --year 2024
+# Analiză tendințe piață
+python analiza/tendinte_piata.py --an 2024
 
-# Create visualization
-python analysis/visualization.py --output reports/charts/
+# Creare vizualizări
+python analiza/vizualizari.py --export rapoarte/grafice/
+
+# Descărcare și validare date
+python scripturi/descarca_date.py && python scripturi/valideaza_date.py
 ```
 
-## 📚 Documentation
+## 📚 Documentație
 
-- **Methodology**: See `docs/methodology.md` for analysis approaches
-- **Data Sources**: See `docs/data_sources.md` for information sources
-- **Contributing**: See `docs/CONTRIBUTING.md` for contribution guidelines
+- **Metodologie**: Consultați `documente/metodologie.md` pentru abordări analiză
+- **Surse Date**: Consultați `documente/surse_date.md` pentru informații surse
+- **Ghid Utilizator**: Consultați `documente/ghid_utilizator.md` pentru instrucțiuni detaliate
+- **API**: Consultați `documente/api.md` pentru documentație API
+- **FAQ**: Consultați `documente/faq.md` pentru întrebări frecvente
 
-## 📊 Data Sources
+## 📊 Surse Date
 
-- Romanian Energy Regulatory Authority (ANRE)
-- National Agency for Energy Management (ANME)
-- Ministry of Energy
-- EU Energy Portal
-- Industry publications
-- Company websites and reports
+- Autoritatea Națională de Reglementare în Energie (ANRE)
+- Agenția Națională pentru Eficiență Energetică (ANEE)
+- Ministerul Energiei
+- Portalul Energie al UE
+- Publicații industrie
+- Site-uri și rapoarte companii
+- Baza de date IRENA
+- Statistici Eurostat
 
-## 🎨 Report Templates
+## 🎨 Șabloane Rapoarte
 
-Professional templates for:
-- **Executive Summary**: High-level overview
-- **Market Analysis**: Deep-dive market study
-- **Company Profile**: Individual company analysis
-- **Infographics**: Visual data presentation
-- **Comparative Analysis**: Multi-company comparison
+Șabloane profesionale pentru:
+- **Rezumat Executiv**: Prezentare nivel înalt
+- **Analiză Piață**: Studiu aprofundat piață
+- **Profil Companie**: Analiză companie individuală
+- **Infografice**: Prezentare vizuală date
+- **Analiză Comparativă**: Comparație multi-companii
+- **Dashboard**: Vizualizări interactive
 
-## 🔐 Data Management
+## 🔐 Gestionare Date
 
-- Secure storage of sensitive company data
-- Regular data validation and cleaning
-- Version control for all reports
-- Audit trails for data modifications
+- Stocare securizată date sensibile companii
+- Validare și curățare regulată date
+- Control versiuni pentru toate rapoartele
+- Piste audit pentru modificări date
+- Copii de siguranță automate
+- Conformitate GDPR
 
-## 📅 Update Schedule
+## 📅 Program Actualizare
 
-- Monthly reports: 1st working day of month
-- Quarterly reports: 2 weeks after quarter end
-- Annual reports: January 15th
-- Special reports: As needed
+- Rapoarte lunare: 1ă zi lucrătoare din lună
+- Rapoarte trimestriale: 2 săptămâni după finalizarea trimestru
+- Rapoarte anuale: 15 ianuarie
+- Rapoarte speciale: După caz
+- Actualizare date: Săptămânal
 
-## 🤝 Contributing
+## 🤝 Contribuire
 
-We welcome contributions! Please see `docs/CONTRIBUTING.md` for:
-- Contribution guidelines
-- Code standards
-- Report submission process
-- Data addition procedures
+Sunt binevenite contribuțiile! Consultați `CONTRIBUIRE.md` pentru:
+- Linii directoare contribuire
+- Standarde cod
+- Proces trimitere raport
+- Proceduri adăugare date
+- Processul de review
 
-## 📝 License
+## 📝 Licență
 
-This project is open source and available for educational and research purposes.
+Acest proiect este open source și disponibil pentru scopuri educaționale și de cercetare.
+
+Pentru detalii complete, consultați `LICENTA.md`
 
 ## 📧 Contact
 
-For questions, suggestions, or collaboration inquiries:
-- GitHub Issues: [Report issues here](https://github.com/hashkaki1800-gif/Rapaoarte-Solaris/issues)
-- Email: hashkaki1800@gmail.com
+Pentru întrebări, sugestii sau colaborări:
+- **GitHub Issues**: [Raportați probleme aici](https://github.com/hashkaki1800-gif/Rapaoarte-Solaris/issues)
+- **Discuții**: [Participați la discuții](https://github.com/hashkaki1800-gif/Rapaoarte-Solaris/discussions)
+- **Email**: hashkaki1800@gmail.com
 
-## 🌍 Related Resources
+## 🌍 Resurse Asociate
 
-- [Romanian Solar Energy Association](https://www.aer.org.ro)
-- [IRENA - Renewable Energy Statistics](https://www.irena.org)
-- [EU Energy Policy](https://energy.ec.europa.eu)
-- [NREAP - National Renewable Energy Action Plan](https://www.romania-energia.ro)
+- [Asociația Română pentru Energie Solară](https://www.solarromania.ro)
+- [ANRE - Autoritatea Națională de Reglementare în Energie](https://www.anre.ro)
+- [Ministerul Energiei România](https://energie.gov.ro)
+- [IRENA - Statistici Energie Regenerabilă](https://www.irena.org)
+- [Politica Energetică UE](https://energy.ec.europa.eu)
+- [PNEC - Planul Național Energie-Climat](https://ec.europa.eu/clima/eu-climate-action/2030-climate-target_en)
+
+## 🚀 Statut Proiect
+
+**Versiune**: 2.0.0
+**Statut**: Dezvoltare Activă
+**Ultima Actualizare**: 11 Iunie 2026
+**Manutenență**: Activă
 
 ---
 
-**Last Updated**: June 2026
-**Status**: Active Development
-**Version**: 1.0.0
+✨ Mulțumim pentru interes în piața energiei solare din România!

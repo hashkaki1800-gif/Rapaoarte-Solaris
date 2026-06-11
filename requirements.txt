@@ -1,0 +1,54 @@
+# Rapoarte-Solaris - Dependențe Python
+# Versiune: 2.0.0
+
+# Manipulare date și analiză
+pandas==2.0.3
+numpy==1.24.3
+scipy==1.11.1
+
+# Vizualizare și grafice
+matplotlib==3.7.1
+seaborn==0.12.2
+plotly==5.15.0
+bokeh==3.2.0
+
+# Web și API
+requests==2.31.0
+aiohttp==3.8.5
+flask==2.3.2
+flask-cors==4.0.0
+
+# Procesare fișiere
+python-docx==0.8.11
+openpyxl==3.1.2
+
+# PDF și export
+reportlab==4.0.4
+weasyprint==59.2
+
+# Logging și debug
+python-dotenv==1.0.0
+
+# Utilități
+python-dateutil==2.8.2
+pytz==2023.3
+click==8.1.6
+tqdm==4.65.0
+
+# Machine learning și predicții
+scikit-learn==1.3.0
+statsmodels==0.14.0
+
+# Calitate cod
+flake8==6.0.0
+black==23.7.0
+isort==5.12.0
+pylint==2.17.4
+
+# Testare
+pytest==7.4.0
+pytest-cov==4.1.0
+
+# Securitate
+cryptography==41.0.2
+pyyaml==6.0.1
