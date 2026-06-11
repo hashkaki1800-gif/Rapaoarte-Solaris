@@ -1,0 +1,1 @@
+# Documentatie API - Rapoarte-Solaris\n\n## Endpoints\n\n### Companii\n\nGET /api/v1/companies\n\nParametri: region, type, limit, offset\n\n### Rapoarte\n\nGET /api/v1/reports\n\nParametri: type, year, limit\n\n### Statistici\n\nGET /api/v1/energy/statistics\n\nParametri: region, year, month\n\n---\n\nDocumentatie completa: https://rapoarte-solaris.ro/api/docs\n
